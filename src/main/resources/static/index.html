@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Oxted Village</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Custom Styles */
+        .hero-section {
+            height: 100vh; /* Full viewport height */
+            background-image: url('src\main\resources\static\images\img6.jpg'); /* Updated image as the background */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Align content to the left */
+            text-align: left; /* Align text to the left */
+            color: white;
+            position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+        }
+        .hero-text {
+            position: relative;
+            z-index: 1;
+            padding-left: 20px; /* Add some padding to the left */
+            max-width: 800px; /* Limit the width of the text for better readability */
+        }
+        .hero-text h2 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+        .hero-text p {
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="py-4">
+        <div class="container">
+            <h1 class="display-4">Welcome to Oxted Village</h1>
+            <nav class="navbar navbar-expand-lg">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#attractions">Attractions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-text">
+            <h2 class="display-4">Discover the Beauty of Oxted</h2>
+            <p class="lead">A charming village in the heart of Surrey, UK.</p>
+        </div>
+    </section>
+
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="section-title">About Oxted</h2>
+                    <p class="lead">Oxted is a picturesque village known for its rich history, stunning countryside, and welcoming community. Whether you're exploring its historic landmarks or enjoying the serene landscapes, Oxted offers something for everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="attractions" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Local Attractions</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100">
+                        <img src="src\main\resources\static\images\img5.jpg"
+                             alt="Master Park in Oxted" 
+                             class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">Master Park - A beautiful green space in the center of the village, perfect for picnics and leisurely strolls.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="src\main\resources\static\images\img9.jpg"
+                            
+                             alt="Historic Oxted Mill" 
+                             class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">Oxted Mill - A historic landmark with fascinating heritage, offering a glimpse into the village's past.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{{ url_for('static', filename='images/north-downs.jpg') }}"
+                             onerror="this.src='https://images.unsplash.com/photo-1542202229-7d93c33f5d07?auto=format&fit=crop&w=800&q=80'"
+                             alt="North Downs scenic walk" 
+                             class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">North Downs - Stunning walks and breathtaking views, ideal for nature lovers and hikers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-3 bg-dark text-white">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Oxted Village. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript (Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
